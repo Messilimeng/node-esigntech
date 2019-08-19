@@ -1,6 +1,6 @@
 {
   "name": "esigntech",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "formstream": ">=0.0.8",
     "httpx": "^2.2.0"
@@ -14,6 +14,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "nodejs":">=6.0.0"
+  },
   "keywords": [
     "esign",
     "nodejs",
@@ -21,8 +24,16 @@
     "电子合同",
     "电子签名"
   ],
+  "homepage": "http://open.esign.cn/docs/wk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Messilimeng/node-esigntech"
+  },
+  "bugs": {
+    "url": "https://github.com/Messilimeng/node-esigntech/issues"
+  },
   "author": "limeng",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
     "co-mocha": "^1.2.2",
