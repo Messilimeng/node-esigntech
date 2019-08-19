@@ -1,0 +1,31 @@
+{
+  "name": "esigntech",
+  "version": "1.0.0",
+  "dependencies": {
+    "formstream": ">=0.0.8",
+    "httpx": "^2.2.0"
+  },
+  "description": "nodejs for esign sdk",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "esign",
+    "nodejs",
+    "e签宝",
+    "电子合同",
+    "电子签名"
+  ],
+  "author": "limeng",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "co-mocha": "^1.2.2",
+    "string-random": "^0.1.3"
+  }
+}
