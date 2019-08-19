@@ -8,7 +8,7 @@ npm install esigntech --save
 ```
 ## Usage
 
-### 获取access_token
+###  获取access_token
 请求access_token时需携带appid和app_secrect，示例： 代码示例:
 支持 redis 存储 token
 测试环境时候使用 boole isdebug  (true /false )  测试是为true 正式环境用false
@@ -37,9 +37,9 @@ let eSignApi = new api('appid', 'app_secrect', async function () {
 
 ## 4.1. 个人账号
 
-个人账号创建
+### 个人账号创建
 
-###Account_Create
+Account_Create
 ```js
 let data = {
     "email": "xxxx@qq.com",
@@ -52,7 +52,7 @@ let data = {
 let rest = await eSignApi.Account_Create(data)
 ```
 
-###个人账号修改
+### 个人账号修改
 Account_Modfiy
 ```js
 let data = {
@@ -65,22 +65,22 @@ let data = {
 }
 let rest = await eSignApi.Account_Modfiy(accountId,data)
 ```
-###查询个人账号
+### 查询个人账号
 
 Account_Get
 ```js
 let rest = await eSignApi.Account_Get(accountId)
 ```
 
-###注销个人账号
+### 注销个人账号
 Account_DeleteByThirdId
 ```js
 let rest = await eSignApi.Account_DeleteByThirdId(ThirdId)
 ```
 
-##4.2. 机构账号
+## 4.2. 机构账号
 
-###机构账号创建
+### 机构账号创建
 Organizations_Create
 ```js
 let data = {
@@ -93,7 +93,7 @@ let data = {
 let rest = await eSignApi.Organizations_Create(data)
 ```
 
-###机构账号修改
+###  机构账号修改
 Organizations_Modfiy
 ```js
 var data = {
@@ -104,21 +104,21 @@ var data = {
 let rest = await eSignApi.Organizations_Modfiy(orgId, data)
 ```
 
-###查询机构账号
+### 查询机构账号
 Organizations_Get
 ```js
 let rest = await eSignApi.Organizations_Get(orgId)
 ```
 
-###注销机构账号
+### 注销机构账号
 Organizations_DeleteByOrgId
 ```js
 let rest = await eSignApi.Organizations_DeleteByOrgId(orgId)
 ```
 
-##4.3. 签署授权（账号静默签署权限管理）
+## 4.3. 签署授权（账号静默签署权限管理）
 
-###设置静默签署
+### 设置静默签署
 
 SignAuth_Setting
 ```js
@@ -129,16 +129,16 @@ let data = {
 let rest = await eSignApi.SignAuth_Setting(accountId,data)
 ```
 
-###撤消静默签署
+### 撤消静默签署
 SignAuth_Cancel
 ```js
 let accountId="969c282a943948afa199a75bc6c0c84b";
 let rest = await eSignApi.SignAuth_Cancel(accountId)
 ```
 
-##5.1. 文件管理
+## 5.1. 文件管理
 
-###通过上传方式创建文件
+### 通过上传方式创建文件
 
 Files_getUploadUrl
 ```js
@@ -157,7 +157,7 @@ fileid = rest.data.fileId
 uploadUrl = rest.data.uploadUrl
 ```
 
-###文件流上传方法
+### 文件流上传方法
 Files_Upload
 ```js
 let fileurl = 'thirdpartdoc.pdf'
@@ -170,7 +170,7 @@ var data = {
 let rest = await eSignApi.Files_Upload(data)
 ```
 
-###通过模板创建文件
+### 通过模板创建文件
 Fils_CreateByTemplate
 ```js
 let data={
@@ -183,7 +183,7 @@ let data={
 }
 let rest = await eSignApi.Fils_CreateByTemplate(data)
 ```
-###文件添加数字水印
+### 文件添加数字水印
 Fils_BatchAddWatermark
 ```js
 var param = {
@@ -216,15 +216,15 @@ var param = {
 }
 let rest = await eSignApi.Fils_BatchAddWatermark(param)
 ```
-###获取文件下载地址
+### 获取文件下载地址
 Files_getAddress
 ```js
 let rest = await eSignApi.Files_getAddress(fileid)
 ```
 
-##5.2. 模板管理
+## 5.2. 模板管理
 
-###通过上传方式创建模板
+### 通过上传方式创建模板
 DocTemplates_createByUploadUrl
 ```js
 let fileurl = '6666.pdf'
@@ -240,7 +240,7 @@ templateId = rest.data.templateId
 uploadUrl = rest.data.uploadUrl
 ```
 
-###添加输入项组件
+### 添加输入项组件
 DocTemplates_CreateComponents
 ```js
 let templateId =  '7bd12b7cb64f441ca5d71bc614ec899c'
@@ -273,19 +273,19 @@ var data={
 let rest = await eSignApi.DocTemplates_CreateComponents(templateId,data)
 ids = rest.data.toString()
 ```
-###删除输入项组件
+### 删除输入项组件
 DocTemplates_DeleteComponents
 ```js
 let rest = await eSignApi.DocTemplates_DeleteComponents(templateId,ids)
 ```
 
-###查询模板详情
+### 查询模板详情
 DocTemplates_GetComponents
 ```js
 let rest = await eSignApi.DocTemplates_GetComponents(templateId)
 ```
 
-##5.3 文件流上传方法
+## 5.3 文件流上传方法
 ```js
 let fileurl = 'thirdpartdoc.pdf'
 var data = {
@@ -297,9 +297,9 @@ var data = {
 let rest = await eSignApi.Files_Upload(data)
 ```
 
-##6.1. 印章创建
+## 6.1. 印章创建
 
-###创建个人模板印章
+### 创建个人模板印章
 
 Account_SealsCreatePersonalTemplate
 ```js
@@ -315,7 +315,7 @@ sealId = rest.data.sealId
 fileKey = rest.data.fileKey
 ```
 
-###创建机构模板印章
+### 创建机构模板印章
 Organizations_CreateOfficialTemplate
 ```js
 var data = {
@@ -331,42 +331,42 @@ var data = {
 let rest = await eSignApi.Organizations_CreateOfficialTemplate(orgId,data)
 sealId = rest.data.sealId
 ```
-###创建个人/机构图片印章
+### 创建个人/机构图片印章
 
 Account_SealsGet
 ```js
 let rest = await eSignApi.Account_SealsGet(accountId OR orgId,1,10)
 ```
 
-##6.2. 查询印章列表
-###查询个人印章
+## 6.2. 查询印章列表
+### 查询个人印章
 Account_SealsGet
 ```js
 let rest = await eSignApi.Account_SealsGet(accountId,1,10)
 ```
 
-###查询机构印章
+### 查询机构印章
 Organizations_SealsGet
 ```js
 let rest = await eSignApi.Organizations_SealsGet(orgId,1,10)
 ```
-##6.3. 删除印章
+## 6.3. 删除印章
 
-###删除个人印章
+### 删除个人印章
 Account_SealsDeleteById
 ```js
 let rest = await eSignApi.Account_SealsDeleteById(accountId,sealId)
 ```
 
-###删除机构印章
+### 删除机构印章
 Organizations_SealsDeleteById
 ```js
 let rest = await eSignApi.Organizations_SealsDeleteById(orgId,sealId)
 ```
 
-##7.1. 签署流程
+## 7.1. 签署流程
 
-###签署流程创建
+### 签署流程创建
 SignFlows_Create
 ```js
 var data = {
@@ -388,34 +388,34 @@ let rest = await eSignApi.SignFlows_Create(data)
 flowId = rest.data.flowId
 ```
 
-###签署流程查询
+### 签署流程查询
 SignFlows_Get
 ```js
 let rest = await eSignApi.SignFlows_Get(flowId)
 ```
 
-###签署流程开启
+### 签署流程开启
 SignFlows_Start
 ```js
 let rest = await eSignApi.SignFlows_Start(flowId, {})
 ```
 
-###签署流程撤销
+### 签署流程撤销
 ```js
 var data = {
     "revokeReason": "合同有误"
 }
 let rest = await eSignApi.SignFlows_Revoke(flowId, data)
 ```
-###签署流程归档
+### 签署流程归档
 SignFlows_Archive
 ```js
 let rest = await eSignApi.SignFlows_Archive(flowId, {})
 ```
 
-##7.2. 流程文档
+## 7.2. 流程文档
 
-###流程文档添加
+### 流程文档添加
 SignFlows_CreateDocuments
 ```js
 var data = {
@@ -430,23 +430,23 @@ var data = {
 }
 let rest = await eSignApi.SignFlows_CreateDocuments(flowId, data)
 ```
-###流程文档删除
+### 流程文档删除
 ```js
 let rest = await eSignApi.SignFlows_DeleteDocuments(flowId, fileIds)
 ```
 
-###流程文档下载
+### 流程文档下载
 SignFlows_GetDocuments
 ```js
 let rest = await eSignApi.SignFlows_GetDocuments(flowId)
 ```
-##7.3. 流程附件
-###流程附件列表
+## 7.3. 流程附件
+### 流程附件列表
 SignFlows_GetAttachments
 ```js
 let rest = await eSignApi.SignFlows_GetAttachments(flowId)
 ```
-###流程附件添加
+### 流程附件添加
 SignFlows_CreateAttachments
 ```js
 var data = {
@@ -460,21 +460,21 @@ var data = {
 
 let rest = await eSignApi.SignFlows_CreateAttachments(flowId, data)
 ```
-###流程附件删除
+### 流程附件删除
 SignFlows_DeteleAttachments
 ```js
 let rest = await eSignApi.SignFlows_DeteleAttachments(flowId, fileIds)
 ```
-##7.4. 流程签署区
+## 7.4. 流程签署区
 
 
-###查询签署区列表
+### 查询签署区列表
 SignFlows_GetSignfields
 ```js
 let rest = await eSignApi.SignFlows_GetSignfields(flowId, accountId)
 ```
 
-###添加平台自动盖章签署区
+### 添加平台自动盖章签署区
 ```js
 SignFlows_CreateSignfieldsPlatformSign
 var data = {
@@ -495,7 +495,7 @@ var data = {
 let rest = await eSignApi.SignFlows_CreateSignfieldsPlatformSign(flowId, data)
 ```
 
-###添加签署方自动盖章签署区
+### 添加签署方自动盖章签署区
 SignFlows_CreateSignfieldsAutoSign
 ```js
 var data = {
@@ -517,7 +517,7 @@ var data = {
 let rest = await eSignApi.SignFlows_CreateSignfieldsAutoSign(flowId, data)
 ```
 
-###添加手动盖章签署区
+### 添加手动盖章签署区
 SignFlows_CreateSignfieldsHandSign
 ```js
 var data ={
@@ -543,17 +543,17 @@ var data ={
 let rest = await eSignApi.SignFlows_CreateSignfieldsHandSign(flowId, data)
 ```
 
-###删除签署区
+### 删除签署区
 ```js
 let rest = await eSignApi.SignFlows_DeleteSignfields(flowId)
 ```
-##7.5. 流程签署人
-###流程签署人列表
+## 7.5. 流程签署人
+### 流程签署人列表
 SignFlows_GetSigners
 ```js
  let rest = await eSignApi.SignFlows_GetSigners(flowId)
  ```
-###流程签署人催签
+### 流程签署人催签
 
 SignFlows_SignersRushsign
 ```js
@@ -564,7 +564,7 @@ var data ={
 }
 let rest = await eSignApi.SignFlows_SignersRushsign(flowId, data)
 ```
-###获取签署地址
+### 获取签署地址
 ```js
 let rest = await eSignApi.SignFlows_ExecuteUrl(flowId)
 ```
