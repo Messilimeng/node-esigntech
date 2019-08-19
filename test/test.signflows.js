@@ -54,14 +54,14 @@ describe('test.signflows.js', function () {
         console.log(JSON.stringify(rest))
         expect(rest).to.be.include.keys('code')
     })
-    // it("SignFlows_Revoke", async function () {
-    //     var data = {
-    //         "revokeReason": "合同有误"
-    //     }
-    //     let rest = await eSignApi.SignFlows_Revoke(flowId, data)
-    //     console.log(JSON.stringify(rest))
-    //     expect(rest).to.be.include.keys('code')
-    // })
+    it("SignFlows_Revoke", async function () {
+        var data = {
+            "revokeReason": "合同有误"
+        }
+        let rest = await eSignApi.SignFlows_Revoke(flowId, data)
+        console.log(JSON.stringify(rest))
+        expect(rest).to.be.include.keys('code')
+    })
     it("SignFlows_Archive", async function () {
         let rest = await eSignApi.SignFlows_Archive(flowId, {})
         console.log(JSON.stringify(rest))
@@ -75,12 +75,12 @@ describe('test.signflows.js', function () {
         expect(rest).to.be.include.keys('code')
     })
 
-    // it("SignFlows_DeleteDocuments", async function () {
-    //     var fileIds
-    //     let rest = await eSignApi.SignFlows_DeleteDocuments(flowId, fileIds)
-    //     console.log(JSON.stringify(rest))
-    //     expect(rest).to.be.include.keys('code')
-    // })
+    it("SignFlows_DeleteDocuments", async function () {
+        var fileIds
+        let rest = await eSignApi.SignFlows_DeleteDocuments(flowId, fileIds)
+        console.log(JSON.stringify(rest))
+        expect(rest).to.be.include.keys('code')
+    })
 
     it("SignFlows_GetAttachments", async function () {
         let rest = await eSignApi.SignFlows_GetAttachments(flowId)
@@ -100,12 +100,12 @@ describe('test.signflows.js', function () {
         console.log(JSON.stringify(rest))
         expect(rest).to.be.include.keys('code')
     })
-    // it("SignFlows_DeteleAttachments", async function () {
+    it("SignFlows_DeteleAttachments", async function () {
 
-    //     let rest = await eSignApi.SignFlows_DeteleAttachments(flowId, fileIds)
-    //     console.log(JSON.stringify(rest))
-    //     expect(rest).to.be.include.keys('code')
-    // })
+        let rest = await eSignApi.SignFlows_DeteleAttachments(flowId, fileIds)
+        console.log(JSON.stringify(rest))
+        expect(rest).to.be.include.keys('code')
+    })
     it("SignFlows_GetSignfields", async function () {
         let rest = await eSignApi.SignFlows_GetSignfields(flowId, accountId)
         console.log(JSON.stringify(rest))

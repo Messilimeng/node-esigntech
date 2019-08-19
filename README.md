@@ -1,4 +1,14 @@
 
+# Foobar
+e签宝是专业的全生态电子签名服务商。基于实名身份，为用户提供在线电子签章／签名服务的平台，并且为企业用户提供电子签名、电子合同管理、数据存证和法律维权等服务。
+## Installation
+
+```bash
+npm install esigntech --save
+```
+## Usage
+```js
+
 获取access_token
 
 请求access_token时需携带appid和app_secrect，示例： 代码示例:
@@ -22,6 +32,7 @@ let eSignApi = new api('appid', 'app_secrect', async function () {
     })
 
 }, isdebug)
+```
 
 4.1. 个人账号
 
@@ -502,3 +513,10 @@ let rest = await eSignApi.SignFlows_ExecuteUrl(flowId)
 
 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

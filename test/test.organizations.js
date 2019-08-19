@@ -21,29 +21,29 @@ describe('test.organizations.js', function () {
         expect(rest).to.be.include.keys('code')
 
     });
-    // it('Organizations_Modfiy', async function () {
+    it('Organizations_Modfiy', async function () {
 
-    //     var data = {
-    //         "idNumber": "320830199009161634",
-    //         "idType": "CRED_ORG_USCC",
-    //         "name": "colsoft11"
-    //     }
-    //     let rest = await eSignApi.Organizations_Modfiy(orgId, data)
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
-    // });
+        var data = {
+            "idNumber": "320830199009161634",
+            "idType": "CRED_ORG_USCC",
+            "name": "colsoft11"
+        }
+        let rest = await eSignApi.Organizations_Modfiy(orgId, data)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
+    });
 
-    // it('Organizations_Get', async function () {
-    //     let rest = await eSignApi.Organizations_Get(orgId)
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
-    // })
+    it('Organizations_Get', async function () {
+        let rest = await eSignApi.Organizations_Get(orgId)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
+    })
 
-    // it('Organizations_DeleteByOrgId', async function () {
-    //     let rest = await eSignApi.Organizations_DeleteByOrgId(orgId)
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
-    // })
+    it('Organizations_DeleteByOrgId', async function () {
+        let rest = await eSignApi.Organizations_DeleteByOrgId(orgId)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
+    })
 
     it('Organizations_CreateOfficialTemplate', async function () {
 

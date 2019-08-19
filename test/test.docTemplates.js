@@ -9,7 +9,7 @@ describe('test.docTemplates.js', function () {
     let contentMd5
     it('DocTemplates_createByUploadUrl', async function () {
         let fileurl = '6666.pdf'
-        contentMd5 = await readFileMd5(fileurl)
+        contentMd5 = await eSignApi.readFileMd5(fileurl)
         console.log('md5 ' + contentMd5)
         let data = {
             "contentMd5": contentMd5,

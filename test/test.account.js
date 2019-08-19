@@ -24,36 +24,36 @@ describe('account', function () {
        
     });
 
-    // it('Account_Get', async function () {
-    //     let rest = await eSignApi.Account_Get('8ad45b2c34114629ba0214c0f7302b70')
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
+    it('Account_Get', async function () {
+        let rest = await eSignApi.Account_Get(accountId)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
        
-    // });
+    });
 
-    // it('Account_Modfiy', async function () {
-    //     let data = {
-    //         "email": "5364030004@qq.com",
-    //         "idNumber": "320830199009161634",
-    //         "idType": "CRED_PSN_CH_IDCARD",
-    //         "mobile": "13073309327",
-    //         "name": "messi",
-    //         "thirdPartyUserId": thirdPartyUserId
-    //     }
-    //     let rest = await eSignApi.Account_Modfiy(accountId,data)
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
+    it('Account_Modfiy', async function () {
+        let data = {
+            "email": "5364030004@qq.com",
+            "idNumber": "320830199009161634",
+            "idType": "CRED_PSN_CH_IDCARD",
+            "mobile": "13073309327",
+            "name": "messi",
+            "thirdPartyUserId": thirdPartyUserId
+        }
+        let rest = await eSignApi.Account_Modfiy(accountId,data)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
    
-    // });
-    // it('Account_DeleteByThirdId', async function () {
-    //     let ThirdId = thirdPartyUserId
-    //     let rest = await eSignApi.Account_DeleteByThirdId(ThirdId)
-    //     console.log(rest)
-    //     expect(rest).to.be.include.keys('code')
-    // });
+    });
+    it('Account_DeleteByThirdId', async function () {
+        let ThirdId = thirdPartyUserId
+        let rest = await eSignApi.Account_DeleteByThirdId(ThirdId)
+        console.log(rest)
+        expect(rest).to.be.include.keys('code')
+    });
 
     // it('Account_DeleteSealsById',async function(){
-    //     let rest = await eSignApi.Account_DeleteSealsById(accountId,sealId)
+    //     let rest = await eSignApi.Account_SealsDeleteById(accountId,sealId)
     //     console.log(rest)
     //     expect(rest).to.be.include.keys('code')
     // })
