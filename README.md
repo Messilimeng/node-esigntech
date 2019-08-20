@@ -18,6 +18,7 @@ npm install esigntech --save
 ```js
 
 const fs = require('fs')
+let api =  require('esigntech')
 let eSignApi = new api('appid', 'app_secrect', async function () {
     return new Promise(function (resovle, reject) {
         fs.readFile('../access_token.txt', 'utf8', function (err, txt) {
