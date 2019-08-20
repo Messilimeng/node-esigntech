@@ -13,8 +13,8 @@ npm install esigntech --save
 #### 请求access_token时需携带appid和app_secrect，示例： 代码示例:
 #### 支持 redis 存储 token
 #### 测试环境时候使用 boole isdebug  (true /false )  测试是为true 正式环境用false
-#### product https://smlopenapi.esign.cn/  
-#### development https://openapi.esign.cn/
+#### development  https://smlopenapi.esign.cn/  
+#### product https://openapi.esign.cn/
 ```js
 
 const fs = require('fs')
